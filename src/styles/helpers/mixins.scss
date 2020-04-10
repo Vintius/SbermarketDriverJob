@@ -1,0 +1,44 @@
+@mixin close($top, $right) {
+  position: absolute;
+
+  top: $top;
+  right: $right;
+
+  width: 20px;
+  height: 20px;
+
+  cursor: pointer;
+
+  &:before,
+  &:after {
+    content: "";
+
+    position: absolute;
+
+    top: 8px;
+    right: -3px;
+
+    width: 26px;
+    height: 2px;
+
+    background-color: #c1c1c1;
+    transition: background-color 0.1ms ease-in;
+  }
+
+  &:before {
+    webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  &:hover {
+    &:after,
+    &:before {
+      background: #919191;
+    }
+  }
+}

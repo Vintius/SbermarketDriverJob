@@ -1,0 +1,80 @@
+.footer {
+  width: 100%;
+  height: 274px;
+  position: relative;
+  z-index: 10;
+  background: $color-lightgrey;
+}
+
+.footer__content {
+  padding: 40px 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #A6A8A8;
+}
+
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 40px;
+  border-bottom: 1px solid $color-grey;
+}
+
+.footer__logo {
+
+}
+
+.footer__socials {
+
+}
+
+.footer__socialsTitle {
+  display: inline-block;
+  width: 114px;
+  vertical-align: middle;
+  margin-right: 19px;
+}
+
+.footer__socialLink {
+  width: 46px;
+  height: 46px;
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid $color-grey;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 43px;
+
+  &:not(:last-child) {
+    margin-right: 12px;
+  }
+
+  img {
+    vertical-align: middle;
+  }
+}
+
+.footer__bottom {
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__copyrights {
+  width: 178px;
+}
+
+.footer__ofertaLink {
+  color: #A6A8A8;
+  text-decoration: underline;
+}
+
+.footer__requisites {
+  width: 392px;
+}
+
+.footer__footnote {
+  width: 251px;
+}

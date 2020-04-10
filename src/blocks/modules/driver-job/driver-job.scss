@@ -1,0 +1,314 @@
+.driverJob {
+  position: relative;
+}
+
+.driverJob__content {
+
+}
+
+.driverJob__topBlock {
+  padding: 60px 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $color-grey;
+}
+
+.driverJob__topBlockLeft {
+  width: 506px;
+  height: 550px;
+}
+
+.driverJob__topBlockTitle {
+  font-weight: bold;
+  font-size: 58px;
+  line-height: 66px;
+  margin-bottom: 12px;
+  width: 387px;
+}
+
+.driverJob__topBlockSubtitle {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 32px;
+  margin-bottom: 7px;
+  width: 250px;
+}
+
+.driverJob__topBlockImages {
+  width: 506px;
+  height: 336px;
+  position: relative;
+
+  img {
+    position: absolute;
+    box-shadow: 0 10px 45px rgba(0, 0, 0, 0.08),
+                0 5px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 18px;
+
+    &:first-child {
+      top: 25px;
+      left: 0;
+    }
+
+    &:nth-child(2) {
+      bottom: 0;
+      right: 0;
+    }
+
+    &:last-child {
+      top: 0;
+      right: 70px;
+      width: 105px;
+    }
+  }
+}
+
+.driverJob__topBlockRight {
+
+}
+
+.driverJob__form {
+  height: 634px;
+  box-shadow: 0 10px 45px rgba(0, 0, 0, 0.08),
+              0 5px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 28px;
+  padding: 40px 48px 40px 40px;
+  max-width: 388px;
+  width: 100%;
+  background: $color-white;
+
+  li {
+    margin-bottom: 14px;
+
+    &:first-child {
+      margin-bottom: 18px;
+    }
+
+    &:nth-child(2) {
+      margin-bottom: 22px;
+    }
+
+    &:last-child {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.driverJob__formTitle {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 32px;
+  color: $color-green;
+  margin-bottom: 20px;
+}
+
+.driverJob__formCheckbox {
+  display: none;
+
+  &:checked + .driverJob__formCheckboxLabel:before {
+    border-color: $color-green;
+    background: url("../img/svg/check.svg") no-repeat center/cover $color-green;
+  }
+}
+
+.driverJob__formCheckboxLabel {
+  position: relative;
+  display: block;
+  width: 208px;
+  margin-left: 32px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -32px;
+    width: 22px;
+    height: 22px;
+    background: $color-lightgrey;
+    border: 1px solid $color-grey;
+    border-radius: 4px;
+  }
+}
+
+.driverJob__formInputText {
+  width: 298px;
+  height: 46px;
+  background: $color-lightgrey;
+  border: 1px solid $color-grey;
+  border-radius: 8px;
+  padding: 16px;
+
+  &::placeholder {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #A6A8A8;
+  }
+}
+
+.driverJob__formSelector {
+  width: 298px;
+  height: 46px;
+  border: 1px solid $color-grey;
+  border-radius: 8px;
+  padding-left: 16px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: url("../img/svg/selector-arrow.svg") no-repeat right 20px center;
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+.driverJob__formButton {
+  width: 300px;
+  height: 56px;
+  box-shadow: 0 5px 15px rgba(33, 160, 56, 0.4);
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  background: $color-green;
+  color: $color-white;
+  margin-bottom: 12px;
+
+  &--bottom {
+    width: 271px;
+    height: 78px;
+    font-size: 22px;
+    margin: 0 auto;
+    display: block;
+
+    .driverJob__formButtonImage {
+      width: 19px;
+      margin-right: 5px;
+    }
+  }
+}
+
+.driverJob__formButtonImage {
+  width: 14px;
+}
+
+.driverJob__formOfertaDesc {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #c8c8c8;
+}
+
+.driverJob__formOfertaLink {
+  color: #c8c8c8;
+  text-decoration: underline;
+}
+
+.driverJob__middleBlock {
+  padding: 60px 0 73px;
+  border-bottom: 1px solid $color-grey;
+}
+
+.driverJob__middleBlockPartners {
+  width: 640px;
+  display: flex;
+  margin: 0 auto 47px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.driverJob__middleBlockPartnersImage {
+  width: 126px;
+}
+
+.driverJob__middleBlockConditions {
+  width: 980px;
+  height: 276px;
+  position: relative;
+  left: calc(50% - 490px);
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(228.55deg, #FFFDD2 -20.52%, #FFF0C8 54.09%);
+  border-radius: 28px;
+  padding: 60px 78px 0;
+}
+
+.driverJob__middleBlockConditionsItem {
+  text-align: center;
+  width: 155px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.driverJob__middleBlockConditionsItemBox {
+  width: 100px;
+  height: 100px;
+  background: $color-white;
+  box-shadow: 0 10px 45px rgba(0, 0, 0, 0.08),
+              0 5px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 28px;
+  text-align: center;
+  line-height: 93px;
+  margin: 0 auto 12px;
+}
+
+.driverJob__middleBlockConditionsItemImage {
+  vertical-align: middle;
+  width: 41px;
+}
+
+.driverJob__bottomBlock {
+  padding: 100px 0;
+}
+
+.driverJob__bottomBlockTitle {
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 54px;
+  text-align: center;
+  margin-bottom: 61px;
+}
+
+.driverJob__bottomBlockSteps {
+  display: flex;
+  justify-content: space-between;
+  width: 900px;
+  margin: 0 auto 60px;
+}
+
+.driverJob__bottomBlockStep {
+  position: relative;
+
+  &:not(:last-child) {
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -106px;
+      width: 86px;
+      border-top: 2px solid $color-grey;
+    }
+}
+}
+
+.driverJob__bottomBlockStepTitle {
+  font-weight: bold;
+  font-size: 62px;
+  display: inline-block;
+  margin-right: 20px;
+  color: $color-green;
+  vertical-align: middle;
+}
+
+.driverJob__bottomBlockStepText {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 26px;
+  display: inline-block;
+  vertical-align: middle;
+}

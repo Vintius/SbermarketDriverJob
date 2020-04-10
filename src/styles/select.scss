@@ -1,0 +1,52 @@
+.selectr {
+  &-container {
+    font-size: 16px;
+    font-weight: normal;
+    font-family: "TT Norms";
+
+    .selectr-selected {
+      outline: none;
+      height: 48px;
+
+      padding: 14px 20px;
+      border-radius: 8px;
+
+      border: solid 1px #dfdfdf;
+
+      &:before {
+        border-width: 6px 6px 0 6px;
+        border-color: $color-tenant transparent transparent;
+      }
+    }
+
+    &.open {
+      .selectr-selected {
+        border-color: $color-tenant;
+
+        &:before {
+          border-width: 0 6px 6px 6px;
+          border-color: transparent transparent $color-tenant;
+        }
+      }
+    }
+  }
+
+  &-options-container {
+    top: 100%;
+    border-color: transparent #dfdfdf #dfdfdf;
+  }
+
+  &-option {
+    line-height: 38px;
+
+    &.active,
+    &.selected {
+      color: #000;
+      background-color: transparent;
+    }
+
+    &:hover {
+      background-color: #ffe8c8;
+    }
+  }
+}

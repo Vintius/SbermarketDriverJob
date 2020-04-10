@@ -1,0 +1,231 @@
+.form {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  height: 546px;
+  border-radius: 20px;
+  box-shadow: 0 2px 22px 0 rgba(179, 179, 179, 0.5);
+  background-color: $color-white;
+
+  &.loading {
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 64px;
+      height: 64px;
+      background: url(../images/spinner.gif) no-repeat;
+
+    }
+  }
+
+  &-block {
+    width: 50%;
+    padding: 65px 45px 80px 60px;
+    font-size: 22px;
+    font-weight: bold;
+
+    & + & {
+      border-left: solid 1px #e7e7e7;
+      padding: 65px 60px 80px 45px;
+
+    }
+  }
+
+  &-title {
+    font-size: 56px;
+    font-weight: bold;
+    line-height: normal;
+    margin: 60px 0 80px;
+  }
+
+  .retailers {
+    display: flex;
+    justify-content: flex-start;
+
+    &-item {
+      margin: 5px 0;
+
+      & + .retailers-item {
+        margin-left: 15px;
+      }
+    }
+  }
+
+  form {
+    fieldset {
+      border: none;
+      margin: 0;
+      padding: 0;
+
+      & + fieldset {
+        margin-top: 15px;
+      }
+
+      label {
+        display: block;
+        font-size: 16px;
+        margin-bottom: 4px;
+        font-weight: normal;
+      }
+
+      .field {
+        width: 100%;
+        height: 48px;
+
+        padding: 14px 20px;
+
+        border-radius: 8px;
+        border: solid 1px #dfdfdf;
+
+        background-color: $color-white;
+
+        font-size: 16px;
+        font-family: 'TT Norms';
+
+        transition-duration: 200ms;
+        transition-timing-function: ease;
+        transition-property: border-color;
+        outline: none;
+        -webkit-appearance: none;
+
+        &:focus {
+          border: solid 1px $color-tenant;
+        }
+      }
+    }
+
+    .submit {
+      display: inline-block;
+      min-width: 204px;
+      height: 48px;
+
+      border-radius: 8px;
+      background-color: $color-tenant;
+      border: none;
+      color: $color-white;
+
+      font-size: 20px;
+      font-weight: 500;
+      font-family: 'TT Norms';
+      transition: background-color 0.2ms ease-in;
+      outline: none;
+      cursor: pointer;
+
+      &-line {
+        display: flex;
+        align-items: center;
+        margin-top: 40px;
+      }
+
+      &:hover {
+        background-color: #1f7932;
+      }
+
+      &:disabled {
+        background-color: #d5d5d5;
+        cursor: not-allowed;
+      }
+
+      &-info {
+        margin-left: 15px;
+        font-size: 12px;
+        color: #898989;
+        font-weight: normal;
+
+        .oferta {
+          cursor: pointer;
+          text-decoration: underline;
+
+          &:hover {
+            color: $color-tenant;
+          }
+        }
+      }
+    }
+
+    .form-error {
+      font-size: 16px;
+      font-weight: normal;
+      color: red;
+      margin-top: 10px;
+    }
+
+  }
+
+  @media only screen and (max-width: $screen-md) {
+    &-block {
+      padding: 45px 25px 60px 40px;
+
+      & + & {
+        padding: 45px 40px 60px 25px;
+      }
+    }
+
+    &-title {
+      font-size: 40px;
+      margin: 40px 0 50px;
+    }
+
+    .retailers {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  @media only screen and (max-width: $screen-sm) {
+    flex-direction: column;
+    height: auto;
+
+    &-block {
+      width: 100%;
+      padding: 40px 30px 40px;
+      text-align: center;
+
+      & + & {
+        padding: 40px 30px 40px;
+        border-top: solid 1px #e7e7e7;
+        border-left: none;
+        text-align: left;
+      }
+    }
+
+    &-title {
+      font-size: 38px;
+      margin: 20px 0;
+    }
+
+    fieldset {
+      max-width: 550px;
+    }
+  }
+
+  @media only screen and (max-width: $screen-xs) {
+    &-block {
+      padding: 30px;
+    }
+
+    &-title {
+      font-size: 32px;
+      margin: 15px 0 10px;
+    }
+
+    .submit-line {
+      margin-top: 20px;
+      flex-direction: column;
+    }
+
+    .submit {
+      width: 100%;
+
+      &-info {
+        margin-left: 0;
+        margin-top: 15px;
+        text-align: center;
+      }
+    }
+  }
+}
