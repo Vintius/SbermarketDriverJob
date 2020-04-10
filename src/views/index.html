@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Работа в СберМаркет</title>
-    <!--<link as="font" crossorigin="anonymous" href="job/fonts/regular.woff2" rel="preload" type="font/woff2">-->
-    <!--<link as="font" crossorigin="anonymous" href="job/fonts/bold.woff2" rel="preload" type="font/woff2">-->
     <link rel="stylesheet" href="styles/main.css">
 </head>
     <body>
@@ -15,7 +13,7 @@
             <img class="bg-item bg-item--first" src="img/svg/bg-item.svg" v-if="!ofertaOpened">
             <img class="bg-item bg-item--second" src="img/svg/bg-item.svg" v-if="!ofertaOpened">
             <img class="bg-item bg-item--third" src="img/svg/bg-item.svg">
-            <img class="bg-item bg-item--fourth" src="img/svg/bg-item.svg">
+            <img class="bg-item bg-item--fourth" src="img/svg/bg-item.svg" v-if="!ofertaOpened">
         </div>
         @@include("../blocks/modules/header/header.html")
         @@include("../blocks/modules/driver-job/driver-job.html")
