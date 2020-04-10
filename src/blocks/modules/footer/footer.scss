@@ -113,3 +113,27 @@
     display: none;
   }
 }
+
+@media (max-width: 602px) {
+  .footer__content {
+    padding-top: 81px;
+  }
+
+  .footer__top {
+    flex-direction: column;
+  }
+
+  .footer__logo {
+    margin-bottom: 40px;
+  }
+
+  .footer__socials {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer__socialsTitle {
+    display: block;
+    margin: 0 auto 12px;
+  }
+}
