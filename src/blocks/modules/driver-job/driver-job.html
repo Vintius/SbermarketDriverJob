@@ -1,6 +1,6 @@
 <div class="driverJob">
-  <div class="driverJob__content content">
-    <div class="driverJob__topBlock">
+  <div class="driverJob__content content" v-show="!ofertaOpened">
+    <div class="driverJob__topBlock" id="topBlock">
       <div class="driverJob__topBlockLeft">
         <h1 class="driverJob__topBlockTitle">
           Зарабатывай от 60 000 ₽
@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="driverJob__topBlockRight">
-        <form action="" class="driverJob__form" target="" method="post">
+        <form action="" class="driverJob__form" target="" method="post" id="form">
           <h3 class="driverJob__formTitle">
             Заполните заявку
           </h3>
@@ -55,7 +55,11 @@
             Отправить заявку
           </button>
           <p class="driverJob__formOfertaDesc">
-            Оставляя заявку, вы подтверждаете <a href="#" class="driverJob__formOfertaLink">условия оферты</a>
+            Оставляя заявку, вы подтверждаете
+            <a href="#oferta" class="driverJob__formOfertaLink"
+                @click="ofertaOpened = !ofertaOpened">
+              условия оферты
+            </a>
           </p>
         </form>
       </div>
@@ -118,13 +122,50 @@
           </span>
         </div>
       </div>
-      <button class="driverJob__formButton driverJob__formButton--bottom" type="button">
-        <img src="img/car_pic.png" alt="" class="driverJob__formButtonImage">
-        Отправить заявку
-      </button>
+      <a href="#form">
+        <button class="driverJob__formButton driverJob__formButton--bottom" type="button" on-click="#top-block">
+          <img src="img/car_pic.png" alt="" class="driverJob__formButtonImage">
+          Отправить заявку
+        </button>
+      </a>
     </div>
   </div>
-  <div class="driverJob__oferta">
-  
+  <div class="driverJob__oferta" v-if="ofertaOpened" id="oferta">
+    <div class="driverJob__ofertaContent content">
+      <h1 class="driverJob__ofertaTitle">
+      Условия оферты
+      </h1>
+      <p class="driverJob__ofertaText">
+        Посредством заполнения настоящей формы я даю свое согласие сайту sbermarket.ru (далее – сайт) на обработку всех
+        моих персональных данных, указанных в настоящей форме, а также в документах, впоследствии мною предоставленных
+        в виде копий/оригиналов и т.п., любыми способами, в том числе третьими лицами, включая осуществление сбора,
+        систематизацию, накопление, хранение, обновление, уточнение (проверка), изменение, использование и
+        распространение
+        (включая передачу), в том числе воспроизведение, электронное копирование и трансграничную передачу,
+        обезличивание,
+        блокирование, уничтожение, а также вышеуказанную обработку иных моих персональных данных, полученных в
+        результате
+        их обработки, с целью заключения со мной ученического договора, трудового договора или договора гражданского
+        правового характера на выполнение работ и/или оказания услуг, создания информационных систем персональных данных
+        сайта, а также в любых других целях, прямо или косвенно связанных с заключением указанных выше договоров.<br>
+        <br>
+        Указанное согласие дано на шесть лет, а в случае его отзыва обработка моих персональных данных должна быть
+        прекращена сайтом и/или третьими лицами, а данные - уничтожены.<br>
+        <br>
+        Я уведомлен, что данное согласие может быть отозвано путем отправки на сайт в письменной форме уведомления об
+        отзыве согласия заказным письмом с уведомлением о вручении, либо вручено лично под роспись уполномоченному
+        представителю сайта по юридическому адресу, указанному на сайте.<br>
+        <br>
+        Я даю согласие на получение мной вакансий сайта или его контрагентов, а также на получение рекламы, рассылки,
+        в том числе по сети подвижной радиотелефонной связи, от сайта, его контрагентов и аффилированных лиц.
+      </p>
+      <a href="#form">
+        <button class="driverJob__formButton driverJob__formButton--bottom left"
+                @click="ofertaOpened = !ofertaOpened">
+          <img src="img/car_pic.png" alt="" class="driverJob__formButtonImage">
+          Отправить заявку
+        </button>
+      </a>
+    </div>
   </div>
 </div>

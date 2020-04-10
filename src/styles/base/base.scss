@@ -12,7 +12,6 @@ html, body {
 }
 
 body {
-  //overflow-x: hidden;
   position: relative;
 }
 
@@ -24,6 +23,10 @@ a {
 .content {
   max-width: 960px;
   margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
 }
 
 .hidden {
@@ -42,14 +45,14 @@ a {
 .bg-item {
   position: absolute;
 
-  &:first-of-type {
+  &--top {
     width: 1205px;
     height: 1250px;
     left: calc(50% + -120px);
     top: -598px;
   }
 
-  &:nth-of-type(2) {
+  &--middle {
     width: 1282px;
     height: 1330px;
     left: calc(50% + -1490px);
@@ -57,11 +60,11 @@ a {
     transform: rotate(-180deg);
   }
 
-  &:nth-of-type(3) {
+  &--bottom {
     width: 1286px;
     height: 1334px;
-    left: calc(50% + 105px);
-    top: 1457px;
+    left: calc(50% + 115px);
+    bottom: -600px;
     transform: rotate(105deg);
   }
 }

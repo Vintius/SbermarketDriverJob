@@ -12,9 +12,9 @@
     <body>
     <div id="driverJob">
         <div class="bg">
-            <img class="bg-item" src="img/svg/bg-item.svg">
-            <img class="bg-item" src="img/svg/bg-item.svg">
-            <img class="bg-item" src="img/svg/bg-item.svg">
+            <img class="bg-item bg-item--top" src="img/svg/bg-item.svg" v-if="!ofertaOpened">
+            <img class="bg-item bg-item--middle" src="img/svg/bg-item.svg" v-if="!ofertaOpened">
+            <img class="bg-item bg-item--bottom" src="img/svg/bg-item.svg">
         </div>
         @@include("../blocks/modules/header/header.html")
         @@include("../blocks/modules/driver-job/driver-job.html")
