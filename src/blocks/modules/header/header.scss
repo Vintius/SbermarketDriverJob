@@ -2,6 +2,7 @@
   height: 112px;
   width: 100%;
   position: relative;
+  padding: 0 16px;
 }
 
 .header__content {
@@ -49,14 +50,16 @@
     margin-right: 12px;
   }
 
-  &:hover {
-    background: $color-white-transparent-50;
-}
+  //&:hover {
+  //  background: $color-white-transparent-50;
+  //}
 }
 
 .header__socialLogo {
   vertical-align: middle;
   display: inline-block;
+  width: 22px;
+  height: 17px;
 }
 
 .header__title {
@@ -82,4 +85,33 @@
   margin-top: 20px;
   justify-content: center;
   overflow: hidden;
+}
+
+@media (max-width: $screen-sm) {
+  .header {
+    height: auto;
+  }
+
+  .header__content {
+    padding: 20px 0;
+  }
+
+  .header__logo {
+    width: 167px;
+  }
+
+  .header__socialLink {
+    width: 40px;
+    height: 40px;
+    line-height: 37px;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+
+  .header__socialLogo {
+    width: 18px;
+    height: 14px;
+  }
 }

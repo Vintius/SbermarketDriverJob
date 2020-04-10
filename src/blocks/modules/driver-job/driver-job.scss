@@ -1,5 +1,6 @@
 .driverJob {
   position: relative;
+  padding: 0 16px;
 }
 
 .driverJob__content {
@@ -181,7 +182,7 @@
     width: 271px;
     height: 78px;
     font-size: 22px;
-    margin: 0 auto;
+    margin: 0 auto 0;
     display: block;
 
     .driverJob__formButtonImage {
@@ -213,7 +214,8 @@
 }
 
 .driverJob__middleBlockPartners {
-  width: 640px;
+  width: 100%;
+  max-width: 640px;
   display: flex;
   margin: 0 auto 47px;
   justify-content: space-between;
@@ -225,10 +227,12 @@
 }
 
 .driverJob__middleBlockConditions {
-  width: 980px;
+  width: 100%;
+  max-width: 980px;
   height: 276px;
   position: relative;
-  left: calc(50% - 490px);
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: space-between;
   background: linear-gradient(228.55deg, #FFFDD2 -20.52%, #FFF0C8 54.09%);
@@ -336,4 +340,134 @@
 
 .left {
   margin-left: 0;
+}
+
+@media (max-width: 950px) {
+
+  .driverJob__topBlock {
+    padding: 40px 0 50px;
+    display: block;
+    position: relative;
+  }
+
+  .driverJob__topBlockLeft {
+    width: auto;
+    height: auto;
+    text-align: center;
+  }
+
+  .driverJob__topBlockTitle {
+    font-size: 42px;
+    line-height: 50px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .driverJob__topBlockSubtitle {
+    margin: 0 auto 726px;
+    width: 100%;
+  }
+
+  .driverJob__form {
+    max-width: 518px;
+    position: absolute;
+    top: 164px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .driverJob__formTitle {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .driverJob__formInputText {
+    width: 100%;
+  }
+
+  .driverJob__formSelector {
+    width: 100%;
+  }
+
+  .driverJob__formButton {
+    margin: 0 auto 12px;
+    display: block;
+  }
+
+  .driverJob__formOfertaDesc {
+    margin: 0 auto;
+    width: 203px;
+    text-align: center;
+  }
+
+  .driverJob__topBlockImages {
+    margin: 0 auto;
+  }
+
+  .driverJob__middleBlock {
+    padding: 40px 0;
+  }
+
+  .driverJob__middleBlockConditions {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 32px 27px;
+  }
+
+  .driverJob__middleBlockConditionsItem {
+    flex-basis: 50%;
+    width: auto;
+
+    &:first-child, &:nth-child(2) {
+      margin-bottom: 40px;
+    }
+  }
+
+  .driverJob__middleBockConditionsItemText {
+    max-width: 143px;
+    margin: 0 auto;
+  }
+
+  .driverJob__bottomBlock {
+    padding: 60px 0 80px;
+  }
+
+  .driverJob__bottomBlockTitle {
+    font-size: 36px;
+    line-height: 42px;
+    margin-bottom: 30px;
+  }
+
+  .driverJob__bottomBlockSteps {
+    flex-direction: column;
+    width: auto;
+  }
+
+  .driverJob__bottomBlockStep {
+
+    &:not(:last-child) {
+      margin-bottom: 53px;
+    }
+
+    &:after {
+      top: 169px !important;
+      right: auto !important;
+      left: calc(50% - 20px);
+      transform: rotateZ(90deg);
+      width: 40px !important;
+    }
+  }
+
+  .driverJob__bottomBlockStepTitle {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .driverJob__bottomBlockStepText {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
 }
