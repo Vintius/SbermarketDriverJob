@@ -45,14 +45,14 @@ button {
 .bg-item {
   position: absolute;
 
-  &--top {
+  &--first {
     width: 1205px;
     height: 1250px;
     left: calc(50% + -120px);
     top: -598px;
   }
 
-  &--middle {
+  &--second {
     width: 1282px;
     height: 1330px;
     left: calc(50% + -1490px);
@@ -60,11 +60,54 @@ button {
     transform: rotate(-180deg);
   }
 
-  &--bottom {
+  &--third {
     width: 1286px;
     height: 1334px;
     left: calc(50% + 115px);
     bottom: -600px;
     transform: rotate(105deg);
+  }
+
+  &--fourth {
+    display: none;
+  }
+}
+
+@media (max-width: 425px) {
+  .bg-item {
+
+    &--first {
+      width: 703px;
+      height: 729px;
+      transform: rotate(15deg);
+      top: -658px;
+      left: calc(50% + -70px);
+    }
+
+    &--second {
+      width: 629px;
+      height: 576px;
+      transform: rotate(-170.02deg);
+      left: calc(50% + -593px);
+      top: 150px;
+    }
+
+    &--third {
+      width: 527px;
+      height: 546px;
+      transform: none;
+      left: calc(50% + -15px);
+      bottom: auto;
+      top: 1050px;
+    }
+
+    &--fourth {
+      display: block;
+      width: 376px;
+      height: 390px;
+      left: calc(50% - 400px);
+      bottom: 1060px;
+      transform: rotate(180deg);
+    }
   }
 }
