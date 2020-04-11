@@ -15,13 +15,13 @@
         </div>
       </div>
       <div class="driverJob__topBlockRight">
-        <form action="" class="driverJob__form" target="" method="post" id="form">
+        <form action="" class="driverJob__form" target="" method="post" id="form_id">
           <h3 class="driverJob__formTitle">
             Заполните заявку
           </h3>
           <ul>
             <li>
-              <input class="driverJob__formCheckbox" type="checkbox" name="fio" id="medCard" required>
+              <input class="driverJob__formCheckbox" type="checkbox" name="" id="medCard" required>
               <label class=driverJob__formCheckboxLabel for="medCard">
                 У меня есть медицинская карта или я готов её получить
               </label>
@@ -33,7 +33,12 @@
               </label>
             </li>
             <li>
-              <input class="driverJob__formInputText" type="text" placeholder="Как Вас зовут" required>
+              <input class="driverJob__formInputText"
+                     type="text"
+                     name="fio"
+                     id="fio"
+                     placeholder="Как Вас зовут"
+                     required>
             </li>
             <li>
               <select name="" id="citySelector" class="driverJob__formSelector" required>
@@ -130,12 +135,12 @@
           </span>
         </div>
       </div>
-      <a href="#form">
-        <button class="driverJob__formButton driverJob__formButton--bottom" type="button" on-click="#top-block">
-          <img src="img/car_pic.png" alt="" class="driverJob__formButtonImage">
-          Отправить заявку
-        </button>
-      </a>
+      <button class="driverJob__formButton driverJob__formButton--bottom"
+              type="button"
+              @click="scrollFocus('form_id', 'fio')">
+        <img src="img/car_pic.png" alt="" class="driverJob__formButtonImage">
+        Отправить заявку
+      </button>
     </div>
   </div>
   <div class="driverJob__oferta" v-if="ofertaOpened" id="oferta">
@@ -167,13 +172,11 @@
         Я даю согласие на получение мной вакансий сайта или его контрагентов, а также на получение рекламы, рассылки,
         в том числе по сети подвижной радиотелефонной связи, от сайта, его контрагентов и аффилированных лиц.
       </p>
-      <a href="#form">
-        <button class="driverJob__formButton driverJob__formButton--bottom left"
-                @click="ofertaOpened = !ofertaOpened">
-          <img src="img/car_pic.png" alt="" class="driverJob__formButtonImage">
-          Отправить заявку
-        </button>
-      </a>
+      <button type='button' class="driverJob__formButton driverJob__formButton--bottom left"
+              @click="function() {ofertaOpened = !ofertaOpened; scrollFocus('form_id', 'fio');}">
+        <img src="img/car_pic.png" alt="" class="driverJob__formButtonImage">
+        Отправить заявку
+      </button>
     </div>
   </div>
 </div>
