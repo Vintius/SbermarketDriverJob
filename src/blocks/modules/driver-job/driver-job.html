@@ -3,10 +3,10 @@
     <div class="driverJob__topBlock" id="topBlock">
       <div class="driverJob__topBlockLeft">
         <h1 class="driverJob__topBlockTitle">
-          Зарабатывай от&nbsp60&nbsp000&nbsp₽
+          Зарабатывай от&nbsp;60&nbsp;000&nbsp;₽
         </h1>
         <p class="driverJob__topBlockSubtitle">
-          С&nbspличным автомобилем на&nbspдоставке продуктов
+          С&nbsp;личным автомобилем на&nbsp;доставке продуктов
         </p>
         <div class="driverJob__topBlockImages">
           <img src="img/man_image1.png" alt="" width="382px">
@@ -15,19 +15,30 @@
         </div>
       </div>
       <div class="driverJob__topBlockRight">
-        <form action="" class="driverJob__form" target="" method="post" id="form_id">
+        <iframe name="hidden_iframe"
+                id="hidden_iframe"
+                style="display:none;"
+                @load="clearSuccess()">
+        </iframe>
+        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdL6ImYVaLCR5FEBcFnZJUXTKRzkejFNcf63QVPu-Feq8JK0w/formResponse"
+              class="driverJob__form"
+              method="post"
+              autocomplete="off"
+              target="hidden_iframe"
+              @submit="submitted=true"
+              id="form_id">
           <h3 class="driverJob__formTitle">
             Заполните заявку
           </h3>
           <ul>
             <li>
-              <input class="driverJob__formCheckbox" type="checkbox" name="" id="medCard" required>
+              <input class="driverJob__formCheckbox" type="checkbox" name="medCard" id="medCard" required>
               <label class=driverJob__formCheckboxLabel for="medCard">
-                У меня есть медицинская карта или я готов её получить
+                У меня есть медицинская карта
               </label>
             </li>
             <li>
-              <input class="driverJob__formCheckbox" type="checkbox" name="" id="driveB" required>
+              <input class="driverJob__formCheckbox" type="checkbox" name="driveB" id="driveB" required>
               <label class="driverJob__formCheckboxLabel" for="driveB">
                 У меня есть права категории B
               </label>
@@ -35,26 +46,51 @@
             <li>
               <input class="driverJob__formInputText"
                      type="text"
-                     name="fio"
+                     name="entry.1785355285"
                      id="fio"
-                     placeholder="Как Вас зовут"
+                     placeholder="Как вас зовут"
                      required>
             </li>
             <li>
-              <select name="" id="citySelector" class="driverJob__formSelector" required>
-                <option value="Москва">Москва</option>
-              </select>
+              <multiselect class='driverJob__formSelector'
+                           v-model="city_value"
+                           :options="cities"
+                           :searchable="false"
+                           label="name"
+                           track-by="name"
+                           :show-labels="false">
+              </multiselect>
+              <input type="text" name="entry.324565782" :value="city_value.name" required>
             </li>
             <li>
-              <input class="driverJob__formInputText" type="text" placeholder="Гражданство" required>
+              <multiselect class='driverJob__formSelector'
+                           v-model="country_value"
+                           :options="countries"
+                           placeholder="Гражданство"
+                           :searchable="false"
+                           :show-labels="false"
+                           :allow-empty="false">
+              </multiselect>
+              <input type="text" name="entry.1357856506" :value="country_value" required>
             </li>
             <li>
-              <input class="driverJob__formInputText" type="text" placeholder="Марка автомобиля" required>
+              <input class="driverJob__formInputText"
+                     type="text" name="entry.1519765933"
+                     placeholder="Марка автомобиля" required>
             </li>
             <li>
-              <input class="driverJob__formInputText" type="text" placeholder="Номер телефона" required>
+              <input class="driverJob__formInputText"
+                     type="tel"
+                     name="entry.968941449"
+                     placeholder="Номер телефона"
+                     v-mask="'+7(###)###-##-##'"
+                     required>
             </li>
           </ul>
+          <input type="text" id="utm_campaign-id" name="entry.1935736962" class="hidden">
+          <input type="text" id="utm_medium-id" name="entry.243586484" class="hidden">
+          <input type="text" id="utm_source-id" name="entry.1653361795" class="hidden">
+          <input type="text" id="utm_term-id" name="entry.1342993897" class="hidden">
           <button class="driverJob__formButton" name="submit">
             <img src="img/car_pic.png" alt="" class="driverJob__formButtonImage">
             Отправить заявку
@@ -82,7 +118,7 @@
             <img src="img/home_zone.png" alt="" class="driverJob__middleBlockConditionsItemImage">
           </div>
             <p class="driverJob__middleBockConditionsItemText">
-                Зона доставки в&nbspудобном районе
+                Зона доставки в&nbsp;удобном районе
             </p>
         </div>
         <div class="driverJob__middleBlockConditionsItem">
@@ -106,7 +142,7 @@
             <img src="img/docs.png" alt="" class="driverJob__middleBlockConditionsItemImage">
           </div>
             <p class="driverJob__middleBockConditionsItemText">
-                Помощь с&nbspдокументами
+                Помощь с&nbsp;документами
             </p>
         </div>
       </div>
@@ -119,7 +155,7 @@
         <div class="driverJob__bottomBlockStep">
           <span class="driverJob__bottomBlockStepTitle">1</span>
           <span class="driverJob__bottomBlockStepText">
-            Пройдите&nbspбыстрое<br>собеседование
+            Пройдите&nbsp;быстрое<br>собеседование
           </span>
         </div>
         <div class="driverJob__bottomBlockStep">
@@ -131,7 +167,7 @@
         <div class="driverJob__bottomBlockStep">
           <span class="driverJob__bottomBlockStepTitle">3</span>
           <span class="driverJob__bottomBlockStepText">
-            Работайте<br>и&nbspзарабатывайте
+            Работайте<br>и&nbsp;зарабатывайте
           </span>
         </div>
       </div>

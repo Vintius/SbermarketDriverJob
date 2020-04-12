@@ -80,6 +80,7 @@
 
   li {
     margin-bottom: 14px;
+    position: relative;
 
     &:first-child {
       margin-bottom: 18px;
@@ -104,7 +105,10 @@
 }
 
 .driverJob__formCheckbox {
-  display: none;
+  //display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 
   &:checked + .driverJob__formCheckboxLabel:before {
     border-color: $color-green;
@@ -147,176 +151,228 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
-    color: #A6A8A8;
+    color: $color-grey-placeholder;
   }
 }
 
 .driverJob__formSelector {
-  width: 298px;
-  height: 46px;
-  border: 1px solid $color-grey;
-  border-radius: 8px;
-  padding-left: 16px;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  background: url("../img/svg/selector-arrow.svg") no-repeat right 20px center;
 
-  &::-ms-expand {
-    display: none;
+  .multiselect__placeholder {
+    padding-left: 8px;
+    padding-top: 3px;
+    font-size: 16px;
+    line-height: 24px;
+    color: $color-grey-placeholder;
   }
+
+  .multiselect__single {
+    padding-left: 8px;
+    margin-top: 5px;
+  }
+
+  .multiselect__select {
+    margin-right: 4px;
+    height: 100%;
+
+
+    &:before {
+      display: block;
+      background: url("../img/svg/selector-arrow.svg") no-repeat center;
+      width: 11px;
+      height: 7px;
+      right: auto;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $color-black-font;
+      margin: 0 auto;
+      border: none;
+    }
+  }
+
+  .multiselect__option {
+    color: $color-black-font;
+
+    &--highlight {
+      background: $color-lightgrey;
+
+      &.multiselect__option--selected {
+        background: $color-lightgrey;
+        color: $color-black-font;
+      }
+    }
+  }
+
+  .multiselect__tags {
+    padding-top: 9px;
+    min-height: 48px;
+  }
+
+  & + input {
+    position: absolute;
+    bottom: 13px;
+    left: 15px;
+    z-index: -1;
+  }
+}
+
+.driverJob__formSelectorValid {
+  position: absolute;
+  top: 14px;
+  left: 17px;
+  color: red;
+  background: $color-white;
 }
 
 .driverJob__formButton {
-  width: 100%;
-  max-width: 300px;
-  height: 56px;
-  box-shadow: 0 5px 15px rgba(33, 160, 56, 0.4);
-  border-radius: 8px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  background: $color-green;
-  color: $color-white;
-  margin-bottom: 12px;
+width: 100%;
+max-width: 300px;
+height: 56px;
+box-shadow: 0 5px 15px rgba(33, 160, 56, 0.4);
+border-radius: 8px;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+background: $color-green;
+color: $color-white;
+margin-bottom: 12px;
 
-  &--bottom {
-    width: 271px;
-    height: 78px;
-    font-size: 22px;
-    margin: 0 auto 0;
-    display: block;
+&--bottom {
+width: 271px;
+height: 78px;
+font-size: 22px;
+margin: 0 auto 0;
+display: block;
 
-    .driverJob__formButtonImage {
-      width: 19px;
-      margin-right: 5px;
-    }
-  }
+.driverJob__formButtonImage {
+  width: 19px;
+  margin-right: 5px;
+}
+}
 }
 
 .driverJob__formButtonImage {
-  width: 14px;
+width: 14px;
 }
 
 .driverJob__formOfertaDesc {
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 16px;
-  color: #c8c8c8;
+font-weight: 500;
+font-size: 12px;
+line-height: 16px;
+color: #c8c8c8;
 }
 
 .driverJob__formOfertaLink {
-  color: #c8c8c8;
-  text-decoration: underline;
+color: #c8c8c8;
+text-decoration: underline;
 }
 
 .driverJob__middleBlock {
-  padding: 60px 0 73px;
-  border-bottom: 1px solid $color-grey;
+padding: 60px 0 73px;
+border-bottom: 1px solid $color-grey;
 }
 
 .driverJob__middleBlockPartners {
-  width: 100%;
-  max-width: 640px;
-  display: flex;
-  margin: 0 auto 47px;
-  justify-content: space-between;
-  align-items: center;
+width: 100%;
+max-width: 640px;
+display: flex;
+margin: 0 auto 47px;
+justify-content: space-between;
+align-items: center;
 }
 
 .driverJob__middleBlockPartnersImage {
-  width: 126px;
+width: 126px;
 }
 
 .driverJob__middleBlockConditions {
-  width: 100%;
-  max-width: 980px;
-  height: 276px;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: space-between;
-  background: linear-gradient(228.55deg, #FFFDD2 -20.52%, #FFF0C8 54.09%);
-  border-radius: 28px;
-  padding: 60px 78px 0;
+width: 100%;
+max-width: 980px;
+height: 276px;
+position: relative;
+left: 50%;
+transform: translateX(-50%);
+display: flex;
+justify-content: space-between;
+background: linear-gradient(228.55deg, #FFFDD2 -20.52%, #FFF0C8 54.09%);
+border-radius: 28px;
+padding: 60px 78px 0;
 }
 
 .driverJob__middleBlockConditionsItem {
-  text-align: center;
-  width: 155px;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 22px;
+text-align: center;
+width: 155px;
+font-weight: bold;
+font-size: 18px;
+line-height: 22px;
 }
 
 .driverJob__middleBlockConditionsItemBox {
-  width: 100px;
-  height: 100px;
-  background: $color-white;
-  box-shadow: 0 10px 45px rgba(0, 0, 0, 0.08),
-              0 5px 10px rgba(0, 0, 0, 0.05);
-  border-radius: 28px;
-  text-align: center;
-  line-height: 93px;
-  margin: 0 auto 12px;
+width: 100px;
+height: 100px;
+background: $color-white;
+box-shadow: 0 10px 45px rgba(0, 0, 0, 0.08),
+          0 5px 10px rgba(0, 0, 0, 0.05);
+border-radius: 28px;
+text-align: center;
+line-height: 93px;
+margin: 0 auto 12px;
 }
 
 .driverJob__middleBlockConditionsItemImage {
-  vertical-align: middle;
-  width: 41px;
+vertical-align: middle;
+width: 41px;
 }
 
 .driverJob__bottomBlock {
-  padding: 100px 0;
+padding: 100px 0;
 }
 
 .driverJob__bottomBlockTitle {
-  font-weight: bold;
-  font-size: 48px;
-  line-height: 54px;
-  text-align: center;
-  margin-bottom: 61px;
+font-weight: bold;
+font-size: 48px;
+line-height: 54px;
+text-align: center;
+margin-bottom: 61px;
 }
 
 .driverJob__bottomBlockSteps {
-  display: flex;
-  justify-content: space-between;
-  width: 900px;
-  margin: 0 auto 60px;
+display: flex;
+justify-content: space-between;
+width: 900px;
+margin: 0 auto 60px;
 }
 
 .driverJob__bottomBlockStep {
-  position: relative;
+position: relative;
 
-  &:not(:last-child) {
+&:not(:last-child) {
 
-    &:after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: -106px;
-      width: 86px;
-      border-top: 2px solid $color-grey;
-    }
+&:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -106px;
+  width: 86px;
+  border-top: 2px solid $color-grey;
+}
 }
 }
 
 .driverJob__bottomBlockStepTitle {
-  font-weight: bold;
-  font-size: 62px;
-  display: inline-block;
-  margin-right: 20px;
-  color: $color-green;
-  vertical-align: middle;
+font-weight: bold;
+font-size: 62px;
+display: inline-block;
+margin-right: 20px;
+color: $color-green;
+vertical-align: middle;
 }
 
 .driverJob__bottomBlockStepText {
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 26px;
-  display: inline-block;
-  vertical-align: middle;
+font-weight: bold;
+font-size: 20px;
+line-height: 26px;
+display: inline-block;
+vertical-align: middle;
 }
 
 .driverJob__oferta {
@@ -324,197 +380,197 @@
 }
 
 .driverJob__ofertaContent {
-  padding: 60px 0 100px;
+padding: 60px 0 100px;
 }
 
 .driverJob__ofertaTitle {
-  font-weight: bold;
-  font-size: 36px;
-  line-height: 42px;
-  margin-bottom: 20px;
+font-weight: bold;
+font-size: 36px;
+line-height: 42px;
+margin-bottom: 20px;
 }
 
 .driverJob__ofertaText {
-  line-height: 24px;
-  margin-bottom: 60px;
-  max-width: 714px;
-  width: 100%;
+line-height: 24px;
+margin-bottom: 60px;
+max-width: 714px;
+width: 100%;
 }
 
 .left {
-  margin-left: 0;
+margin-left: 0;
 }
 
 @media (max-width: 950px) {
 
-  .driverJob__topBlock {
-    padding: 40px 0 50px;
-    display: block;
-    position: relative;
-  }
+.driverJob__topBlock {
+padding: 40px 0 50px;
+display: block;
+position: relative;
+}
 
-  .driverJob__topBlockLeft {
-    width: auto;
-    height: auto;
-    text-align: center;
-  }
+.driverJob__topBlockLeft {
+width: auto;
+height: auto;
+text-align: center;
+}
 
-  .driverJob__topBlockTitle {
-    font-size: 42px;
-    line-height: 50px;
-    margin: 0 auto;
-    width: 100%;
-  }
+.driverJob__topBlockTitle {
+font-size: 42px;
+line-height: 50px;
+margin: 0 auto;
+width: 100%;
+}
 
-  .driverJob__topBlockSubtitle {
-    margin: 0 auto 726px;
-    width: 100%;
-  }
+.driverJob__topBlockSubtitle {
+margin: 0 auto 726px;
+width: 100%;
+}
 
-  .driverJob__form {
-    max-width: 518px;
-    position: absolute;
-    top: 164px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+.driverJob__form {
+max-width: 518px;
+position: absolute;
+top: 164px;
+left: 50%;
+transform: translateX(-50%);
+}
 
-  .driverJob__formTitle {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
+.driverJob__formTitle {
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+}
 
-  .driverJob__formInputText {
-    width: 100%;
-  }
+.driverJob__formInputText {
+width: 100%;
+}
 
-  .driverJob__formSelector {
-    width: 100%;
-  }
+.driverJob__formSelector {
+width: 100%;
+}
 
-  .driverJob__formButton {
-    margin: 0 auto 12px;
-    display: block;
-  }
+.driverJob__formButton {
+margin: 0 auto 12px;
+display: block;
+}
 
-  .driverJob__formOfertaDesc {
-    margin: 0 auto;
-    width: 203px;
-    text-align: center;
-  }
+.driverJob__formOfertaDesc {
+margin: 0 auto;
+width: 203px;
+text-align: center;
+}
 
-  .driverJob__topBlockImages {
-    margin: 0 auto;
-  }
+.driverJob__topBlockImages {
+margin: 0 auto;
+}
 
-  .driverJob__middleBlock {
-    padding: 40px 0;
-  }
+.driverJob__middleBlock {
+padding: 40px 0;
+}
 
-  .driverJob__middleBlockConditions {
-    flex-wrap: wrap;
-    height: auto;
-    padding: 32px 27px;
-  }
+.driverJob__middleBlockConditions {
+flex-wrap: wrap;
+height: auto;
+padding: 32px 27px;
+}
 
-  .driverJob__middleBlockConditionsItem {
-    flex-basis: 50%;
-    width: auto;
+.driverJob__middleBlockConditionsItem {
+flex-basis: 50%;
+width: auto;
 
-    &:first-child, &:nth-child(2) {
-      margin-bottom: 40px;
-    }
-  }
+&:first-child, &:nth-child(2) {
+  margin-bottom: 40px;
+}
+}
 
-  .driverJob__middleBockConditionsItemText {
-    max-width: 143px;
-    margin: 0 auto;
-  }
+.driverJob__middleBockConditionsItemText {
+max-width: 143px;
+margin: 0 auto;
+}
 
-  .driverJob__bottomBlock {
-    padding: 60px 0 80px;
-  }
+.driverJob__bottomBlock {
+padding: 60px 0 80px;
+}
 
-  .driverJob__bottomBlockTitle {
-    font-size: 36px;
-    line-height: 42px;
-    margin-bottom: 30px;
-  }
+.driverJob__bottomBlockTitle {
+font-size: 36px;
+line-height: 42px;
+margin-bottom: 30px;
+}
 
-  .driverJob__bottomBlockSteps {
-    flex-direction: column;
-    width: auto;
-  }
+.driverJob__bottomBlockSteps {
+flex-direction: column;
+width: auto;
+}
 
-  .driverJob__bottomBlockStep {
+.driverJob__bottomBlockStep {
 
-    &:not(:last-child) {
-      margin-bottom: 53px;
-    }
+&:not(:last-child) {
+  margin-bottom: 53px;
+}
 
-    &:after {
-      top: 169px !important;
-      right: auto !important;
-      left: calc(50% - 20px);
-      transform: rotateZ(90deg);
-      width: 40px !important;
-    }
-  }
+&:after {
+  top: 169px !important;
+  right: auto !important;
+  left: calc(50% - 20px);
+  transform: rotateZ(90deg);
+  width: 40px !important;
+}
+}
 
-  .driverJob__bottomBlockStepTitle {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-  }
+.driverJob__bottomBlockStepTitle {
+display: block;
+margin: 0 auto;
+text-align: center;
+}
 
-  .driverJob__bottomBlockStepText {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-  }
+.driverJob__bottomBlockStepText {
+display: block;
+margin: 0 auto;
+text-align: center;
+}
 }
 
 @media (max-width: 550px) {
-  .driverJob__form {
-    top: 235px;
+.driverJob__form {
+top: 235px;
+}
+
+.driverJob__topBlockImages {
+//width: 325px;
+width: 100%;
+max-width: 325px;
+height: 392px;
+
+img {
+
+  &:first-child {
+    top: 0;
+    width: 325px;
   }
 
-  .driverJob__topBlockImages {
-    //width: 325px;
-    width: 100%;
-    max-width: 325px;
-    height: 392px;
-
-    img {
-
-      &:first-child {
-        top: 0;
-        width: 325px;
-      }
-
-      &:nth-child(2) {
-        width: 209px;
-      }
-
-      &:last-child {
-        width: 93px;
-        top: 228px;
-        right: auto;
-        left: 0;
-      }
-    }
+  &:nth-child(2) {
+    width: 209px;
   }
 
-  .driverJob__middleBlockPartners {
-    flex-wrap: wrap;
-    max-width: 282px;
+  &:last-child {
+    width: 93px;
+    top: 228px;
+    right: auto;
+    left: 0;
   }
+}
+}
 
-  .driverJob__middleBlockPartnersImage {
+.driverJob__middleBlockPartners {
+flex-wrap: wrap;
+max-width: 282px;
+}
 
-    &:first-child, &:nth-child(2) {
-      margin-bottom: 30px;
-    }
-  }
+.driverJob__middleBlockPartnersImage {
+
+&:first-child, &:nth-child(2) {
+  margin-bottom: 30px;
+}
+}
 }

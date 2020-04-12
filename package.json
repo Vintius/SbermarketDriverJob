@@ -68,11 +68,15 @@
         "yargs": "^13.2.4"
     },
     "dependencies": {
+        "@babel/polyfill": "^7.8.7",
+        "axios": "^0.19.2",
         "inputmask": "^5.0.3",
         "mobius1-selectr": "^2.4.13",
         "node-sass": "^4.13.1",
         "smart-grid": "^2.1.2",
-        "vue": "^2.6.11"
+        "vue": "^2.6.11",
+        "vue-multiselect": "^2.1.6",
+        "vue-the-mask": "^0.11.1"
     },
     "husky": {
         "hooks": {
