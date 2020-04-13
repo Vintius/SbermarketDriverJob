@@ -15,17 +15,17 @@
         </div>
       </div>
       <div class="driverJob__topBlockRight">
-        <iframe name="hidden_iframe"
-                id="hidden_iframe"
+        <iframe name="hidden_iframe_driver"
+                id="hidden_iframe_driver"
                 style="display:none;"
-                @load="clearSuccess()">
+                onload="if(window.submitted){alert('Отправлено')}">
         </iframe>
         <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdL6ImYVaLCR5FEBcFnZJUXTKRzkejFNcf63QVPu-Feq8JK0w/formResponse"
               class="driverJob__form"
               method="post"
               autocomplete="off"
-              target="hidden_iframe"
-              @submit="submitted=true"
+              target="hidden_iframe_driver"
+              onsubmit="window.submitted=true"
               id="form_id">
           <h3 class="driverJob__formTitle">
             Заполните заявку
@@ -83,7 +83,7 @@
                      type="tel"
                      name="entry.968941449"
                      placeholder="Номер телефона"
-                     v-mask="'+7(###)###-##-##'"
+                     v-mask="'+7 (###) ###-##-##'"
                      required>
             </li>
           </ul>
@@ -91,7 +91,7 @@
           <input type="text" id="utm_medium-id" name="entry.243586484" class="hidden">
           <input type="text" id="utm_source-id" name="entry.1653361795" class="hidden">
           <input type="text" id="utm_term-id" name="entry.1342993897" class="hidden">
-          <button class="driverJob__formButton" name="submit">
+          <button type="submit" class="driverJob__formButton" name="submit">
             <img src="img/car_pic.png" alt="" class="driverJob__formButtonImage">
             Отправить заявку
           </button>
