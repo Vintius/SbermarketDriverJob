@@ -27,6 +27,22 @@ window.driver_job = new Vue ({
         country_value: [],
         isTouched: false
     },
+    computed: {
+      urlVars: function(){
+          let uri = window.location.search.substring(1),
+              vars = uri.split('&'),
+              getVars = {},
+              tmp = [];
+
+          vars.forEach(function(v){
+              tmp = v.split('=');
+              if(tmp.length === 2){
+                  getVars[tmp[0]] = tmp[1];
+              }
+          });
+          return getVars;
+      }
+    },
     methods: {
         scrollFocus: function (scroll, focus) {
          this.$nextTick(function () {

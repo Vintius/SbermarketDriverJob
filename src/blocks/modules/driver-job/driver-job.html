@@ -87,10 +87,14 @@
                      required>
             </li>
           </ul>
-          <input type="text" id="utm_campaign-id" name="entry.1935736962" class="hidden">
-          <input type="text" id="utm_medium-id" name="entry.243586484" class="hidden">
-          <input type="text" id="utm_source-id" name="entry.1653361795" class="hidden">
-          <input type="text" id="utm_term-id" name="entry.1342993897" class="hidden">
+          <input type="text" id="utm_campaign-id" name="entry.1935736962"
+                 :value="urlVars.utm_campaign" class="hidden">
+          <input type="text" id="utm_medium-id" name="entry.243586484"
+                 :value="urlVars.utm_medium" class="hidden">
+          <input type="text" id="utm_source-id" name="entry.1653361795"
+                 :value="urlVars.utm_source" class="hidden">
+          <input type="text" id="utm_term-id" name="entry.1342993897"
+                 :value="urlVars.utm_term" class="hidden">
           <button type="submit" class="driverJob__formButton" name="submit">
             <img src="img/car_pic.png" alt="" class="driverJob__formButtonImage">
             Отправить заявку
