@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <title>Работа в СберМаркет</title>
+    <link rel="stylesheet" href="styles/main.min.css">
+</head>
+    <body>
+    <iframe name="hidden_iframe_driver"
+            id="hidden_iframe_driver"
+            style="display:none;"
+            onload="if(window.submitted){alert('Отправлено')}">
+    </iframe>
+    <div id="driverJob">
+        <div class="bg">
+            <img class="bg-item bg-item--first" src="img/svg/bg-item.svg" v-if="!ofertaOpened">
+            <img class="bg-item bg-item--second" src="img/svg/bg-item.svg" v-if="!ofertaOpened">
+            <img class="bg-item bg-item--third" src="img/svg/bg-item.svg">
+            <img class="bg-item bg-item--fourth" src="img/svg/bg-item.svg" v-if="!ofertaOpened">
+        </div>
+        <header class="header">
+    <div class="header__content content">
+        <a href="https://sbermarket.ru">
+            <img class="header__logo" src="img/sbermarket_mailgroup_logo.png" alt="СберМаркет">
+        </a>
+        <div class="header__socials">
+            <a class="header__socialLink" target="_blank" href="https://vk.com/sbermarket_ru"
+            ><img src="img/svg/vk.svg" class="header__socialLogo" alt="VK"
+            ></a>
+            <a class="header__socialLink" target="_blank" href="https://www.facebook.com/sbermarket.ru/"
+            ><img src="img/svg/facebook.svg" class="header__socialLogo" alt="Facebook"
+            ></a>
+            <a class="header__socialLink" target="_blank" href="https://www.instagram.com/sbermarket.ru/"
+            ><img src="img/svg/instagram.svg" class="header__socialLogo" alt="Instagram"
+            ></a>
+        </div>
+    </div>
+</header>
+        <div class="driverJob">
+  <div class="driverJob__content content" v-show="!ofertaOpened">
+    <div class="driverJob__topBlock" id="topBlock">
+      <div class="driverJob__topBlockLeft">
+        <h1 class="driverJob__topBlockTitle">
+          Зарабатывай от&nbsp;60&nbsp;000&nbsp;₽
+        </h1>
+        <p class="driverJob__topBlockSubtitle">
+          С&nbsp;личным автомобилем на&nbsp;доставке продуктов
+        </p>
+        <div class="driverJob__topBlockImages">
+          <img src="img/man_image1.png" alt="" width="382px">
+          <img src="img/man_image2.png" alt="" width="209px">
+          <img src="img/car_pic_border.png" alt="">
+        </div>
+      </div>
+      <div class="driverJob__topBlockRight">
+        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdL6ImYVaLCR5FEBcFnZJUXTKRzkejFNcf63QVPu-Feq8JK0w/formResponse"
+              class="driverJob__form"
+              method="post"
+              autocomplete="off"
+              target="hidden_iframe_driver"
+              onsubmit="window.submitted=true"
+              id="form_id">
+          <h3 class="driverJob__formTitle">
+            Заполните заявку
+          </h3>
+          <ul>
+            <li>
+              <input class="driverJob__formCheckbox" type="checkbox" name="medCard" id="medCard" required>
+              <label class=driverJob__formCheckboxLabel for="medCard">
+                У меня есть медицинская карта
+              </label>
+            </li>
+            <li>
+              <input class="driverJob__formCheckbox" type="checkbox" name="driveB" id="driveB" required>
+              <label class="driverJob__formCheckboxLabel" for="driveB">
+                У меня есть права категории B
+              </label>
+            </li>
+            <li>
+              <!--entry.1785355285-->
+              <input class="driverJob__formInputText"
+                     type="text"
+                     name="entry.1785355285"
+                     id="fio"
+                     placeholder="Как вас зовут"
+                     required>
+            </li>
+            <li>
+              <multiselect class='driverJob__formSelector'
+                           v-model="city_value"
+                           :options="cities"
+                           :searchable="false"
+                           label="name"
+                           track-by="name"
+                           :show-labels="false">
+              </multiselect>
+                <!--required-->
+              <input type="text" name="entry.324565782" :value="city_value.name" required>
+            </li>
+            <li>
+              <multiselect class='driverJob__formSelector'
+                           v-model="country_value"
+                           :options="countries"
+                           placeholder="Гражданство"
+                           :searchable="false"
+                           :show-labels="false"
+                           :allow-empty="false">
+              </multiselect>
+                <!--required-->
+              <input type="text" name="entry.1357856506" :value="country_value" required>
+            </li>
+            <li>
+              <input class="driverJob__formInputText"
+                     type="text" name="entry.1519765933"
+                     placeholder="Марка автомобиля" required>
+            </li>
+            <li>
+              <input class="driverJob__formInputText"
+                     type="tel"
+                     name="entry.968941449"
+                     placeholder="Номер телефона"
+                     v-mask="'+7 (###) ###-##-##'"
+                     required>
+            </li>
+          </ul>
+          <input type="text" id="utm_campaign-id" name="entry.1935736962"
+                 :value="urlVars.utm_campaign" class="hidden">
+          <input type="text" id="utm_medium-id" name="entry.243586484"
+                 :value="urlVars.utm_medium" class="hidden">
+          <input type="text" id="utm_source-id" name="entry.1653361795"
+                 :value="urlVars.utm_source" class="hidden">
+          <input type="text" id="utm_term-id" name="entry.1342993897"
+                 :value="urlVars.utm_term" class="hidden">
+          <button type="submit" class="driverJob__formButton" name="btnSubmit">
+            <img src="img/car_pic.png" alt="" class="driverJob__formButtonImage">
+            Отправить заявку
+          </button>
+          <p class="driverJob__formOfertaDesc">
+            Оставляя заявку, вы подтверждаете
+            <a href="#oferta" class="driverJob__formOfertaLink"
+                @click="ofertaOpened = !ofertaOpened">
+              условия оферты
+            </a>
+          </p>
+        </form>
+      </div>
+    </div>
+    <div class="driverJob__middleBlock">
+      <div class="driverJob__middleBlockPartners">
+        <img src="img/metro.png" alt="" class="driverJob__middleBlockPartnersImage">
+        <img src="img/lenta.png" alt="" class="driverJob__middleBlockPartnersImage">
+        <img src="img/azbuka.png" alt="" class="driverJob__middleBlockPartnersImage">
+        <img src="img/ashan.png" alt="" class="driverJob__middleBlockPartnersImage">
+      </div>
+      <div class="driverJob__middleBlockConditions">
+        <div class="driverJob__middleBlockConditionsItem">
+          <div class="driverJob__middleBlockConditionsItemBox">
+            <img src="img/home_zone.png" alt="" class="driverJob__middleBlockConditionsItemImage">
+          </div>
+            <p class="driverJob__middleBockConditionsItemText">
+                Зона доставки в&nbsp;удобном районе
+            </p>
+        </div>
+        <div class="driverJob__middleBlockConditionsItem">
+          <div class="driverJob__middleBlockConditionsItemBox">
+            <img src="img/carrier.png" alt="" class="driverJob__middleBlockConditionsItemImage">
+          </div>
+            <p class="driverJob__middleBockConditionsItemText">
+                Возможность карьерного роста
+            </p>
+        </div>
+        <div class="driverJob__middleBlockConditionsItem">
+          <div class="driverJob__middleBlockConditionsItemBox">
+            <img src="img/no_exp.png" alt="" class="driverJob__middleBlockConditionsItemImage">
+          </div>
+            <p class="driverJob__middleBockConditionsItemText">
+                Без опыта<br>работы
+            </p>
+        </div>
+        <div class="driverJob__middleBlockConditionsItem">
+          <div class="driverJob__middleBlockConditionsItemBox">
+            <img src="img/docs.png" alt="" class="driverJob__middleBlockConditionsItemImage">
+          </div>
+            <p class="driverJob__middleBockConditionsItemText">
+                Помощь с&nbsp;документами
+            </p>
+        </div>
+      </div>
+    </div>
+    <div class="driverJob__bottomBlock">
+      <h2 class="driverJob__bottomBlockTitle">
+        Простое трудоустройство
+      </h2>
+      <div class="driverJob__bottomBlockSteps">
+        <div class="driverJob__bottomBlockStep">
+          <span class="driverJob__bottomBlockStepTitle">1</span>
+          <span class="driverJob__bottomBlockStepText">
+            Пройдите&nbsp;быстрое<br>собеседование
+          </span>
+        </div>
+        <div class="driverJob__bottomBlockStep">
+          <span class="driverJob__bottomBlockStepTitle">2</span>
+          <span class="driverJob__bottomBlockStepText">
+            Пройдите один<br>день обучения
+          </span>
+        </div>
+        <div class="driverJob__bottomBlockStep">
+          <span class="driverJob__bottomBlockStepTitle">3</span>
+          <span class="driverJob__bottomBlockStepText">
+            Работайте<br>и&nbsp;зарабатывайте
+          </span>
+        </div>
+      </div>
+      <button class="driverJob__formButton driverJob__formButton--bottom"
+              type="button"
+              @click="scrollFocus('form_id', 'fio')">
+        <img src="img/car_pic.png" alt="" class="driverJob__formButtonImage">
+        Отправить заявку
+      </button>
+    </div>
+  </div>
+  <div class="driverJob__oferta" v-if="ofertaOpened" id="oferta">
+    <div class="driverJob__ofertaContent content">
+      <h1 class="driverJob__ofertaTitle">
+      Условия оферты
+      </h1>
+      <p class="driverJob__ofertaText">
+        Посредством заполнения настоящей формы я даю свое согласие сайту sbermarket.ru (далее – сайт) на обработку всех
+        моих персональных данных, указанных в настоящей форме, а также в документах, впоследствии мною предоставленных
+        в виде копий/оригиналов и т.п., любыми способами, в том числе третьими лицами, включая осуществление сбора,
+        систематизацию, накопление, хранение, обновление, уточнение (проверка), изменение, использование и
+        распространение
+        (включая передачу), в том числе воспроизведение, электронное копирование и трансграничную передачу,
+        обезличивание,
+        блокирование, уничтожение, а также вышеуказанную обработку иных моих персональных данных, полученных в
+        результате
+        их обработки, с целью заключения со мной ученического договора, трудового договора или договора гражданского
+        правового характера на выполнение работ и/или оказания услуг, создания информационных систем персональных данных
+        сайта, а также в любых других целях, прямо или косвенно связанных с заключением указанных выше договоров.<br>
+        <br>
+        Указанное согласие дано на шесть лет, а в случае его отзыва обработка моих персональных данных должна быть
+        прекращена сайтом и/или третьими лицами, а данные - уничтожены.<br>
+        <br>
+        Я уведомлен, что данное согласие может быть отозвано путем отправки на сайт в письменной форме уведомления об
+        отзыве согласия заказным письмом с уведомлением о вручении, либо вручено лично под роспись уполномоченному
+        представителю сайта по юридическому адресу, указанному на сайте.<br>
+        <br>
+        Я даю согласие на получение мной вакансий сайта или его контрагентов, а также на получение рекламы, рассылки,
+        в том числе по сети подвижной радиотелефонной связи, от сайта, его контрагентов и аффилированных лиц.
+      </p>
+      <button type='button' class="driverJob__formButton driverJob__formButton--bottom left"
+              @click="function() {ofertaOpened = !ofertaOpened; scrollFocus('form_id', 'fio');}">
+        <img src="img/car_pic.png" alt="" class="driverJob__formButtonImage">
+        Отправить заявку
+      </button>
+    </div>
+  </div>
+</div>
+        <footer class="footer">
+    <div class="footer__content content">
+        <div class="footer__top">
+            <a href="https://sbermarket.ru">
+                <img src="img/sbermarket_mailgroup_logo.png"
+                     alt="Сбермаркет Mail.ru Group" class="footer__logo">
+            </a>
+            <div class="footer__socials">
+                <div class="footer__socialsTitle">
+                    Подписывайтесь на&nbsp;нас в соцсетях
+                </div>
+                <a href="https://vk.com/sbermarket_ru" target="_blank" class="footer__socialLink">
+                    <img src="img/svg/vk.svg" alt="ВКонтакте">
+                </a>
+                <a href="https://www.facebook.com/sbermarket.ru/" target="_blank" class="footer__socialLink">
+                    <img src="img/svg/facebook.svg" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/sbermarket.ru/" target="_blank" class="footer__socialLink">
+                    <img src="img/svg/instagram.svg" alt="Instagram">
+                </a>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="footer__copyrights">
+                © 2013 — 2020
+                <br>
+                ООО «Инстамарт Сервис»
+                <br>
+                <a href="#oferta" class="footer__ofertaLink"
+                   @click="ofertaOpened = true">
+                        Условия оферты
+                </a>
+            </div>
+            <p class="footer__requisites">
+                ИНН:&nbsp;9705118142,&nbsp;КПП:&nbsp;770501001, ОГРН:&nbsp;1187746494980.
+                <br>
+                Адрес:&nbsp;119017,&nbsp;г.&nbsp;Москва,&nbsp;ул.&nbsp;Пятницкая,&nbsp;д.&nbsp;37, этаж&nbsp;2,&nbsp;пом.&nbsp;I,
+                <br class="footer__br">
+                ком.1,&nbsp;офис 56
+            </p>
+            <p class="footer__footnote">
+                60 000 ₽ — ориентировочный доход курьеров в Москве.
+                Сумма дохода в других городах может отличаться
+            </p>
+        </div>
+    </div>
+</footer>
+    </div>
+
+        <script src="js/main.min.js"></script>
+        <script src="js/vendor.min.js"></script>
+    </body>
+</html>
