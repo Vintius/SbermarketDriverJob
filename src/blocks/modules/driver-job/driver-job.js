@@ -3,7 +3,6 @@ import Vue from 'vue';
 import Multiselect from 'vue-multiselect';
 import {mask} from 'vue-the-mask';
 import axios from 'axios';
-// import qs from 'qs';
 
 window.submitted = false;
 
@@ -50,23 +49,7 @@ window.driver_job = new Vue ({
             document.getElementById(scroll).scrollIntoView();
             document.getElementById(focus).focus();
          });
-        },
-        // sendForm: function () {
-        //
-        //     // const data = {
-        //     //     'entry.1785355285': 'test'
-        //     // };
-        //     // const options = {
-        //     //     method: 'POST',
-        //     //     headers: { 'content-type': 'application/x-www-form-urlencoded' },
-        //     //     data: qs.stringify(data),
-        //     //     url: document.getElementById('form_id').action,
-        //     // };
-        //     // axios(options);
-        //     let form = document.getElementById('form_id');
-        //
-        //     form.submit();
-        // }
+        }
         // clearSuccess: function () {
         //     if(this.submitted) {
         //         // document.querySelectorAll('input[type=text], input[type=tel]')
@@ -88,8 +71,3 @@ window.driver_job = new Vue ({
           })
     }
 });
-
-// document.getElementById('form_id').addEventListener('submit', function (e) {
-//     e.preventDefault();
-//     e.target.submit();
-// });

@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="styles/main.css">
 </head>
     <body>
+    <iframe name="hidden_iframe_driver"
+            id="hidden_iframe_driver"
+            style="display:none;"
+            onload="if(window.submitted){alert('Отправлено')}">
+    </iframe>
     <div id="driverJob">
         <div class="bg">
             <img class="bg-item bg-item--first" src="img/svg/bg-item.svg" v-if="!ofertaOpened">
