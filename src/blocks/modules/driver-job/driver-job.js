@@ -52,16 +52,20 @@ window.driver_job = new Vue ({
          });
         },
         // sendForm: function () {
-        //     const data = {
-        //         'entry.1785355285': 'test'
-        //     };
-        //     const options = {
-        //         method: 'POST',
-        //         headers: { 'content-type': 'application/x-www-form-urlencoded' },
-        //         data: qs.stringify(data),
-        //         url: document.getElementById('form_id').action,
-        //     };
-        //     axios(options);
+        //
+        //     // const data = {
+        //     //     'entry.1785355285': 'test'
+        //     // };
+        //     // const options = {
+        //     //     method: 'POST',
+        //     //     headers: { 'content-type': 'application/x-www-form-urlencoded' },
+        //     //     data: qs.stringify(data),
+        //     //     url: document.getElementById('form_id').action,
+        //     // };
+        //     // axios(options);
+        //     let form = document.getElementById('form_id');
+        //
+        //     form.submit();
         // }
         // clearSuccess: function () {
         //     if(this.submitted) {
@@ -84,3 +88,8 @@ window.driver_job = new Vue ({
           })
     }
 });
+
+// document.getElementById('form_id').addEventListener('submit', function (e) {
+//     e.preventDefault();
+//     e.target.submit();
+// });
