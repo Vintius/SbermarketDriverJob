@@ -20,7 +20,7 @@
               method="post"
               autocomplete="off"
               target="hidden_iframe_driver"
-              onsubmit="window.submitted=true"
+              @submit="submitCheck"
               id="form_id">
           <h3 class="driverJob__formTitle">
             Заполните заявку
@@ -45,7 +45,11 @@
                      name="entry.1785355285"
                      id="fio"
                      placeholder="Как вас зовут"
+                     v-model="fio"
                      required>
+              <div class="driverJob__formError" v-if="fio.match(/^[ ]+$/) && submitError">
+                Некорректное значение
+              </div>
             </li>
             <li>
               <multiselect class='driverJob__formSelector'
@@ -69,12 +73,20 @@
                            :allow-empty="false">
               </multiselect>
                 <!--required-->
-              <input type="text" name="entry.1357856506" :value="country_value" required>
+              <input type="text" name="entry.1357856506"
+                     :value="country_value">
+              <div class="driverJob__formError" v-if="!country_value.length && submitError">
+                Выберите вариант
+              </div>
             </li>
             <li>
               <input class="driverJob__formInputText"
                      type="text" name="entry.1519765933"
+                     v-model="carModel"
                      placeholder="Марка автомобиля" required>
+              <div class="driverJob__formError" v-if="carModel.match(/^[ ]+$/) && submitError">
+                Некорректное значение
+              </div>
             </li>
             <li>
               <input class="driverJob__formInputText"
@@ -82,7 +94,11 @@
                      name="entry.968941449"
                      placeholder="Номер телефона"
                      v-mask="'+7 (###) ###-##-##'"
+                     v-model="telValue"
                      required>
+              <div class="driverJob__formError" v-if="telValue.length < 18 && submitError">
+                Некорректный номер
+              </div>
             </li>
           </ul>
           <input type="text" id="utm_campaign-id" name="entry.1935736962"

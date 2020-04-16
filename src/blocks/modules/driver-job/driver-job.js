@@ -4,7 +4,7 @@ import Multiselect from 'vue-multiselect';
 import {mask} from 'vue-the-mask';
 import axios from 'axios';
 
-window.submitted = false;
+// window.submitted = false;
 
 window.driver_job = new Vue ({
     el: '#driverJob',
@@ -16,6 +16,7 @@ window.driver_job = new Vue ({
     },
     data: {
         ofertaOpened: false,
+        fio: '',
         cities: [],
         countries: [
           'РФ',
@@ -25,7 +26,11 @@ window.driver_job = new Vue ({
         ],
         city_value: {name: 'Москва', id: 1},
         country_value: [],
-        isTouched: false
+        carModel: '',
+        telValue: '',
+        isTouched: false,
+        submitError: false,
+        submitted: false
     },
     computed: {
       urlVars: function(){
@@ -41,7 +46,12 @@ window.driver_job = new Vue ({
               }
           });
           return getVars;
-      }
+      },
+        errorCheck: function () {
+            if (window.submitted && this.country_value.length === 0){
+                return true;
+            }
+        }
     },
     methods: {
         scrollFocus: function (scroll, focus) {
@@ -49,6 +59,20 @@ window.driver_job = new Vue ({
             document.getElementById(scroll).scrollIntoView();
             document.getElementById(focus).focus();
          });
+        },
+        debug: function () {
+            debugger;
+        },
+        submitCheck: function (e) {
+            if (!this.country_value.length || this.telValue.length < 18 || (this.fio || this.carModel).match(/^[ ]+$/)) {
+                e.preventDefault();
+                this.submitError = true;
+                // this.submitted = false;
+            }
+            else {
+                this.submitError = false;
+                this.submitted = true;
+            }
         }
         // clearSuccess: function () {
         //     if(this.submitted) {
@@ -62,7 +86,7 @@ window.driver_job = new Vue ({
         // }
     },
     created: function () {
-      axios.get('https://cors-anywhere.herokuapp.com/https://sbermarket.ru/api/operational_zones?sort=name')
+      axios.get('https://sbermarket.ru/api/operational_zones?sort=name')
           .then(response => {
              this.cities = response.data.operational_zones;
           })
