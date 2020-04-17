@@ -45,7 +45,7 @@
   border: 1px solid $color-grey;
   border-radius: 50%;
   text-align: center;
-  line-height: 43px;
+  line-height: 40px;
 
   &:not(:last-child) {
     margin-right: 12px;
@@ -135,5 +135,6 @@
   .footer__socialsTitle {
     display: block;
     margin: 0 auto 12px;
+    width: auto;
   }
 }

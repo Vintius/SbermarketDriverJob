@@ -6,7 +6,7 @@
           Зарабатывай от&nbsp;60&nbsp;000&nbsp;₽
         </h1>
         <p class="driverJob__topBlockSubtitle">
-          С&nbsp;личным автомобилем на&nbsp;доставке продуктов
+          С&nbsp;личным автомобилем на&nbsp;доставке&nbsp;продуктов
         </p>
         <div class="driverJob__topBlockImages">
           <img src="img/man_image1.png" alt="" width="382px">
@@ -41,6 +41,7 @@
             <li>
               <!--entry.1785355285-->
               <input class="driverJob__formInputText"
+                     :class="{'fieldError': fio.match(/^[ ]+$/) && submitError}"
                      type="text"
                      name="entry.1785355285"
                      id="fio"
@@ -81,6 +82,7 @@
             </li>
             <li>
               <input class="driverJob__formInputText"
+                     :class="{'fieldError': carModel.match(/^[ ]+$/) && submitError}"
                      type="text" name="entry.1519765933"
                      v-model="carModel"
                      placeholder="Марка автомобиля" required>
@@ -90,6 +92,7 @@
             </li>
             <li>
               <input class="driverJob__formInputText"
+                     :class="{'fieldError': telValue.length < 18 && submitError}"
                      type="tel"
                      name="entry.968941449"
                      placeholder="Номер телефона"
@@ -167,7 +170,7 @@
     </div>
     <div class="driverJob__bottomBlock">
       <h2 class="driverJob__bottomBlockTitle">
-        Простое трудоустройство
+        Присоединиться к&nbsp;команде просто
       </h2>
       <div class="driverJob__bottomBlockSteps">
         <div class="driverJob__bottomBlockStep">
@@ -191,7 +194,7 @@
       </div>
       <button class="driverJob__formButton driverJob__formButton--bottom"
               type="button"
-              @click="scrollFocus('form_id', 'fio')">
+              v-scroll-to="{el: '#form_id', onDone: function(){focusTo('fio')}}">
         <img src="img/car_pic.png" alt="" class="driverJob__formButtonImage">
         Отправить заявку
       </button>

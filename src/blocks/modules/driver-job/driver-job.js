@@ -2,6 +2,7 @@ import "@babel/polyfill";
 import Vue from 'vue';
 import Multiselect from 'vue-multiselect';
 import {mask} from 'vue-the-mask';
+import VueScrollTo from 'vue-scrollto';
 import axios from 'axios';
 
 // window.submitted = false;
@@ -12,7 +13,8 @@ window.driver_job = new Vue ({
       Multiselect
     },
     directives: {
-       mask
+       mask,
+       'scroll-to': VueScrollTo
     },
     data: {
         ofertaOpened: false,
@@ -54,9 +56,8 @@ window.driver_job = new Vue ({
         }
     },
     methods: {
-        scrollFocus: function (scroll, focus) {
+        focusTo: function (focus) {
          this.$nextTick(function () {
-            document.getElementById(scroll).scrollIntoView();
             document.getElementById(focus).focus();
          });
         },
