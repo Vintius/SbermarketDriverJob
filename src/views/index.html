@@ -10,23 +10,22 @@
     <link rel="stylesheet" href="styles/main.css">
 </head>
     <body>
-    <iframe name="hidden_iframe_driver"
-            id="hidden_iframe_driver"
-            style="display:none;"
-            onload="if(window.driver_job.submitted){alert('Отправлено')}">
-    </iframe>
-    <div id="driverJob">
-        <div class="bg">
-            <img class="bg-item bg-item--first" src="img/svg/bg-item.svg" v-if="!ofertaOpened">
-            <img class="bg-item bg-item--second" src="img/svg/bg-item.svg" v-if="!ofertaOpened">
-            <img class="bg-item bg-item--third" src="img/svg/bg-item.svg">
-            <img class="bg-item bg-item--fourth" src="img/svg/bg-item.svg" v-if="!ofertaOpened">
+        <iframe name="hidden_iframe_driver"
+                id="hidden_iframe_driver"
+                style="display:none;"
+                onload="if(window.driver_job.submitted){alert('Отправлено')}">
+        </iframe>
+        <div id="driverJob">
+            <div class="bg">
+                <img class="bg-item bg-item--first" src="img/svg/bg-item.svg" v-if="!ofertaOpened">
+                <img class="bg-item bg-item--second" src="img/svg/bg-item.svg" v-if="!ofertaOpened">
+                <img class="bg-item bg-item--third" src="img/svg/bg-item.svg">
+                <img class="bg-item bg-item--fourth" src="img/svg/bg-item.svg" v-if="!ofertaOpened">
+            </div>
+            @@include("../blocks/modules/header/header.html")
+            @@include("../blocks/modules/driver-job/driver-job.html")
+            @@include("../blocks/modules/footer/footer.html")
         </div>
-        @@include("../blocks/modules/header/header.html")
-        @@include("../blocks/modules/driver-job/driver-job.html")
-        @@include("../blocks/modules/footer/footer.html")
-    </div>
-
         <script src="js/main.js"></script>
         <script src="js/vendor.js"></script>
     </body>
