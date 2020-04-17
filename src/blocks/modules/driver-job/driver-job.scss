@@ -274,6 +274,10 @@
   .multiselect__tags {
     padding-top: 9px;
     min-height: 48px;
+
+    &:hover {
+      border-color: #C7C6CC;
+    }
   }
 
   & + input {
