@@ -200,12 +200,12 @@
       </button>
     </div>
   </div>
-  <div class="driverJob__oferta" v-if="ofertaOpened" id="oferta">
+  <div class="driverJob__oferta" v-if="ofertaOpened" v-cloak id="oferta">
     <div class="driverJob__ofertaContent content">
       <h1 class="driverJob__ofertaTitle">
       Условия оферты
       </h1>
-      <p class="driverJob__ofertaText" v-cloak>
+      <p class="driverJob__ofertaText">
         Посредством заполнения настоящей формы я даю свое согласие сайту sbermarket.ru (далее – сайт) на обработку всех
         моих персональных данных, указанных в настоящей форме, а также в документах, впоследствии мною предоставленных
         в виде копий/оригиналов и т.п., любыми способами, в том числе третьими лицами, включая осуществление сбора,
@@ -230,7 +230,11 @@
         в том числе по сети подвижной радиотелефонной связи, от сайта, его контрагентов и аффилированных лиц.
       </p>
       <button type='button' class="driverJob__formButton driverJob__formButton--bottom left"
-              @click="function() {ofertaOpened = !ofertaOpened; scrollFocus('form_id', 'fio');}">
+              v-scroll-to="{
+                  el: '#form_id',
+                  onStart: function(){ofertaOpened = !ofertaOpened},
+                  onDone: function(){focusTo('fio')}
+              }">
         <img src="img/car_pic.png" alt="" class="driverJob__formButtonImage">
         Отправить заявку
       </button>
